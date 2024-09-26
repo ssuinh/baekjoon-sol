@@ -2,13 +2,13 @@ lst = []  # input
 stack = []
 result = []
 
-
+idx = 0
 n = int(input())
 for i in range(n):
     a = int(input())
     lst.append(a)
 
-r_lst = list(reversed(lst))
+# r_lst = list(reversed(lst))
 
 
 for i in range(n):
@@ -17,10 +17,10 @@ for i in range(n):
 
     
     while True:
-        if len(stack) != 0 and len(r_lst) != 0:
-            if stack[-1] == r_lst[-1]:
+        if len(stack) != 0 and len(lst) != 0:
+            if stack[-1] == lst[idx]:
                 stack.pop()
-                r_lst.pop()
+                idx+=1
                 result.append('-')
             else:
                 break
