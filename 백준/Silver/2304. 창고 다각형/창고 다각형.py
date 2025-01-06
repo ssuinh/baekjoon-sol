@@ -1,3 +1,5 @@
+# 증가하는 로직으로만 구하기 위해서 최고점을 기준으로 구간합. 누적합을 사용한것..?
+
 import sys
 input = sys.stdin.readline
 from collections import deque
