@@ -17,6 +17,8 @@ def back(idx, weight):
 
 n, k = map(int, input().split())
 lst = [list(map(int, input().split())) for _ in range(n)]
+
+# 범위가 왜 100010일까..!!!
 dp = [[-1 for _ in range(100010)] for _ in range(n)]
 
 ans = back(0, 0)
