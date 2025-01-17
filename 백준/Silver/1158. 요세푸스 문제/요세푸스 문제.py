@@ -1,26 +1,19 @@
-# pop append하며 원형으로 돌아가는 형태로 구현.
 import sys
+input = sys.stdin.readline
 from collections import deque
 
-N, K = map(int, sys.stdin.readline().split())
+n, k = map(int, input().split())
+Q = deque(i for i in range(1, n+1))
 
-queue = deque([i for i in range(1, N + 1)])
-res = []
-cnt = 0
-
-while len(queue) > 0:
-    temp = queue.popleft()
-
-    queue.append(temp)
-    cnt += 1
-    if cnt == K:
-        res.append(temp)
-        queue.pop()
-        cnt = 0
-        
-print("<", end='')
-for i in range(0, len(res)):
-    print(res[i], end = '')
-    if i != len(res) - 1:
-        print(", ", end='')
-print(">", end='')
+idx = 1
+print('<', end='')
+while Q:
+    if idx == k:
+        if len(Q) == 1:
+            print(Q.popleft(), end='>')
+        else:
+            print(Q.popleft(), end=', ')
+            idx = 1
+    else:
+        Q.append(Q.popleft())
+        idx += 1
