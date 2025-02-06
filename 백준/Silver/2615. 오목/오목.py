@@ -8,6 +8,8 @@ for i in range(19):
     tmp+=(list(map(int, input().split())))
     graph.append(tmp)
 
+# 좌하, 하, 우하, 우 체크에서
+# 하, 우하, 우, 우상 방향으로 수정함 (가장 왼쪽의 인덱스를 답으로 출력하라는 조건 떄문)
 di = [1, 1, 0, -1]
 dj = [0, 1, 1, 1]
 
@@ -16,7 +18,7 @@ for i in range(1, 20):
     for j in range(1, 20):
         if graph[i][j] == 1 or graph[i][j] == 2:
             tmp = graph[i][j]
-            # 8방향 중 증가하는 방향의 4방향에 같은 색 체크
+            # 8방향 중 4방향에 같은 색 체크
             for k in range(4):
                 ni = i + di[k]
                 nj = j + dj[k]
