@@ -35,3 +35,7 @@
 
  <p>첫 번째 줄에 <strong>정확히</strong> <mjx-container class="MathJax" jax="CHTML" style="font-size: 109%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></mjx-assistive-mml><span aria-hidden="true" class="no-mathjax mjx-copytext">$N$</span></mjx-container>마리의 고양이를 마도카의 집에 들일 수 있는 최소의 행동 횟수를 출력한다.</p>
 
+
+ ### TIL
+ n == 0 인 경우 고려하기
+
