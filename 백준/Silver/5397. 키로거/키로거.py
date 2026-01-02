@@ -1,34 +1,23 @@
 import sys
-input = sys.stdin.readline
 
-t = int(input())
-for tc in range(t):
-    L = list(input())
+tc = int(input())
+for _ in range(tc):
+    L = input()
     ans = []
     tmp = []
-    for i in range(len(L)):
-        if L[i] == '<':
+
+    for i in L:
+        if i == '<':
             if len(ans) > 0:
                 tmp.append(ans.pop())
-        elif L[i] == '>':
-            if len(tmp) != 0:
+        elif i == '>':
+            if len(tmp) > 0:
                 ans.append(tmp.pop())
-            else:
-                continue
-
-        elif L[i] == '-':
-            if len(ans) != 0:
+        elif i == '-':
+            if len(ans) > 0:
                 ans.pop()
-
-        elif L[i] == '\n':
-            continue
-
-        else:  # 일반 문자일 경우
-            ans.append(L[i])
+        else:
+            ans.append(i)
     while len(tmp) > 0:
         ans.append(tmp.pop())
-
-    for i in ans:
-        print(i, end='')
-    if tc < t-1:
-        print()
+    print(''.join(ans))
